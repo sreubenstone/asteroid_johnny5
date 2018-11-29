@@ -16,8 +16,6 @@ getAsteroids = async () => {
 
         })
 
-
-
         const keyArray = Object.keys(asteroidsData.data.near_earth_objects)
         const key1 = keyArray[0]
         const asteroids = asteroidsData.data.near_earth_objects[key1]
@@ -27,8 +25,16 @@ getAsteroids = async () => {
         // console.log('lunar miss distance:', asteroids[3].close_approach_data[0].miss_distance.lunar)
 
         const h = executeHoroscope(input, asteroids)
-
         console.log('horoscope h:', h)
+        const horoscope = horoscopes[h].body
+        console.log(horoscope)
+
+        // SMS the horoscope
+
+
+
+        // Display the horoscope on Pi <client>
+
 
 
     }
