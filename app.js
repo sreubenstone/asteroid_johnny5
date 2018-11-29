@@ -1,11 +1,13 @@
 const axios = require('axios');
 const horoscopes = require('./horoscopes');
 const executeHoroscope = require('./algo')
+const accountSid = 'AC4f4a47682dd13eee8b49aa22c3538fe4';
+const authToken = 'bfc9ff64caca3c90a9e58b786316e5c8';
+const client = require('twilio')(accountSid, authToken);
 
 // should be able to complete all the way down to horoscope and sms
 
 const input = [1, 1, 3, 4, 2, 1, 1, 3, 4, 2]
-
 
 
 getAsteroids = async () => {
@@ -30,7 +32,15 @@ getAsteroids = async () => {
         console.log(horoscope)
 
         // SMS the horoscope
-
+        client.messages
+            .create({
+                body: `${horoscope}`,
+                from: '+19292425545',
+                statusCallback: 'http://postb.in/1234abcd',
+                to: '+15164265510'
+            })
+            .then(message => console.log(message.sid))
+            .done();
 
 
         // Display the horoscope on Pi <client>
