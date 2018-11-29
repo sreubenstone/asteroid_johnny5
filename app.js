@@ -13,13 +13,26 @@ getAsteroids = async () => {
 
         })
 
+
+
+        const keyArray = Object.keys(asteroidsData.data.near_earth_objects)
+        const key1 = keyArray[0]
+        const asteroids = asteroidsData.data.near_earth_objects[key1]
+        // console.log('asteroid:', asteroids[3])
+        // console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
+        // console.log('velocity in mph:', asteroids[3].close_approach_data[0].relative_velocity.miles_per_hour)
+
+
+
+
     }
     catch (err) {
         console.error(err)
     }
 
-    const asteroids = asteroidsData.data.near_earth_objects
-    executeHoroscope(input, asteroids)
+
+    // const h = executeHoroscope(input, asteroids)
+    // const userHoroscope = horoscope[h]
 }
 
 
@@ -27,7 +40,7 @@ getAsteroids = async () => {
 
 getAsteroids()
 
-const userHoroscope = horoscope[h]
 
-console.log(userHoroscope)
+
+
 
