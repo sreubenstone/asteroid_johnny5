@@ -5,6 +5,8 @@ const horoscopes = require('./horoscopes');
 
 const input = [1, 1, 3, 4, 2, 1, 1, 3, 4, 2]
 
+
+
 getAsteroids = async () => {
     try {
         const asteroidsData = await axios({
@@ -18,11 +20,12 @@ getAsteroids = async () => {
         const keyArray = Object.keys(asteroidsData.data.near_earth_objects)
         const key1 = keyArray[0]
         const asteroids = asteroidsData.data.near_earth_objects[key1]
-        // console.log('asteroid:', asteroids[3])
-        // console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
-        // console.log('velocity in mph:', asteroids[3].close_approach_data[0].relative_velocity.miles_per_hour)
+        console.log('asteroid:', asteroids[3])
+        console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
+        console.log('velocity in mph:', asteroids[3].close_approach_data[0].relative_velocity.miles_per_hour)
+        console.log('lunar miss distance:', asteroids[3].close_approach_data[0].miss_distance.lunar)
 
-
+        const h = executeHoroscope(input, asteroids)
 
 
     }
@@ -31,7 +34,7 @@ getAsteroids = async () => {
     }
 
 
-    // const h = executeHoroscope(input, asteroids)
+
     // const userHoroscope = horoscope[h]
 }
 
@@ -39,6 +42,10 @@ getAsteroids = async () => {
 
 
 getAsteroids()
+
+
+
+
 
 
 
