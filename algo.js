@@ -2,38 +2,35 @@
 // spits out a number between 0 and 9
 const executeHoroscope = (input, asteroids) => {
 
-
     // get asteroid
 
     const asteroid = input[2] * 2
-
-    // do something with size of asteroid
-
     const i = asteroids[asteroid]
+
+
     const diamater = i.estimated_diameter.meters.estimated_diameter_max
-    // last number of diameter
+    const diameter_string = diamater.toString()
+    const lastchar_diamater = diameter_string[diameter_string - 1];
 
 
 
-    // do something with velocity of asteroid
     const velocity = i.close_approach_data[0].relative_velocity.miles_per_hour
-    // last number of velocity
+    const velocity_string = velocity.toString()
+    const lastchar_velocity = velocity_string[velocity_string - 1];
 
 
-
-
-
-    // do something with miss distance moon
 
     const lunar = i.close_approach_data[0].miss_distance.lunar
-
-    // first number of lunar
+    const lunar_string = lunar.toString()
+    const lastchar_lunar = lunar_string[lunar_string - 1];
 
 
 
 
 
 }
+
+module.exports = executeHoroscope
 
 /*
 
