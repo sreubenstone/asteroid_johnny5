@@ -12,19 +12,29 @@ const executeHoroscope = (input, asteroids) => {
     const diameter_string = diamater.toString()
     const lastchar_diamater = diameter_string[diameter_string - 1];
 
+    console.log('debugger:', lastchar_diamater)
+
+    const integerD = parseInt(lastchar_diamater, 10)
+
 
 
     const velocity = i.close_approach_data[0].relative_velocity.miles_per_hour
     const velocity_string = velocity.toString()
     const lastchar_velocity = velocity_string[velocity_string - 1];
+    const integerV = parseInt(lastchar_velocity, 10);
 
 
 
     const lunar = i.close_approach_data[0].miss_distance.lunar
     const lunar_string = lunar.toString()
     const lastchar_lunar = lunar_string[lunar_string - 1];
+    const integerL = parseInt(lastchar_lunar, 10);
+
+    const multiply = integerD * integerV * integerL * input[8]
 
 
+
+    return multiply
 
 
 

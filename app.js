@@ -22,17 +22,13 @@ getAsteroids = async () => {
         const key1 = keyArray[0]
         const asteroids = asteroidsData.data.near_earth_objects[key1]
         // console.log('asteroid:', asteroids[3])
-        console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
+        // console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
         // console.log('velocity in mph:', asteroids[3].close_approach_data[0].relative_velocity.miles_per_hour)
         // console.log('lunar miss distance:', asteroids[3].close_approach_data[0].miss_distance.lunar)
-        const test = asteroids[3].estimated_diameter.meters.estimated_diameter_max
-        const dog = test.toString()
-        const lastChar = dog[dog.length - 1];
-        console.log('char:', lastChar)
 
+        const h = executeHoroscope(input, asteroids)
 
-
-        // const h = executeHoroscope(input, asteroids)
+        console.log('horoscope h:', h)
 
 
     }
