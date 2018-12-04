@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app.js"
+    "dev": "node app.js", 
+    "scratch": "node scratch.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "johnny-five": "^1.0.0",
+    "pigpio": "^1.2.0",
+    "raspi-io": "^9.0.0",
     "twilio": "^3.24.0"
   }
 }
