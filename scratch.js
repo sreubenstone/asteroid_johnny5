@@ -1,14 +1,7 @@
 const five = require('johnny-five');
-const raspi = require('raspi-io');
-
-const board = new five.Board({
-    io: new raspi(),
-});
+const board = new five.Board();
 
 
-
-
-/*
 board.on("ready", function () {
 
     // Create a new `joystick` hardware instance.
@@ -25,7 +18,7 @@ board.on("ready", function () {
     });
 });
 
-*/
+
 
 
 /* Autoboot Server (Npm run dev this directory on pi start)
