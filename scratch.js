@@ -42,7 +42,7 @@ board.on("ready", function () {
     
   
    
-   // joystick.removeListener('change', eventHandler)
+   // push to array every time a change event happens
    
 		
 	
