@@ -9,8 +9,11 @@ board.on("ready", function () {
         //   [ x, y ]
         pins: ["A0", "A1"]
     });
-
-    joystick.on("change", function () {
+    
+    setTimeout(function() { 
+		joystick.removeListener('change', eventHandler); }, 10000);
+    
+    function eventHandler() {
         console.log("Joystick");
         console.log("  x : ", this.x);
         console.log("  y : ", this.y);
@@ -33,9 +36,18 @@ board.on("ready", function () {
 			console.log('quadrant:', input)
 		}
 			
-		joystick.off()
+    }
+
+    joystick.on('change', eventHandler);
+    
+  
+   
+   // joystick.removeListener('change', eventHandler)
+   
 		
-    });
+	
+    
+   
 });
 
 
