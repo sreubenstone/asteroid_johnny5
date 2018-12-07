@@ -6,34 +6,31 @@ const array = []
 
 updateArray = (input) => {
     array.push(input);
-    console.log(array)
 }
 
 
 board.on("ready", function () {
-
-    // Create a new `joystick` hardware instance.
-    const joystick = new five.Joystick({
-        //   [ x, y ]
-        pins: ["A0", "A1"]
-    });
-
+	
+	
 	const button = new five.Button({
-		pin: 7,
-		invert: true, 
-		holdtime: 2000
-		});
+	pin: 7,
+	invert: true, 
+	holdtime: 2000
+	});
 	
 	function buttonHandle1() {
-		console.log('button was pressed doggg')
-	}
-	
-	button.on("hold", buttonHandle1)
-	
-	
-    setTimeout(function () {
+		console.log('button was pressed dog');
+		button.removeListener('hold', buttonHandle1)
+		
+		// Create a new `joystick` hardware instance.
+		const joystick = new five.Joystick({
+			//   [ x, y ]
+			pins: ["A0", "A1"]
+		});
+		
+		setTimeout(function () {
         joystick.removeListener('change', eventHandler);
-    }, 5000);
+		}, 5000);
     
      setTimeout(function () {
         getAsteroids(array);
@@ -66,11 +63,12 @@ board.on("ready", function () {
     }
 
     joystick.on('change', eventHandler);
+	}
+	
+	// end button callback
+	
+	button.on("hold", buttonHandle1)
+	
+	});
 
 
-
-    // push to array every time a change event happens
-
-});
-
-module.exports = array
