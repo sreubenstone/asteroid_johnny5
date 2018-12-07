@@ -13,11 +13,24 @@ updateArray = (input) => {
 board.on("ready", function () {
 
     // Create a new `joystick` hardware instance.
-    var joystick = new five.Joystick({
+    const joystick = new five.Joystick({
         //   [ x, y ]
         pins: ["A0", "A1"]
     });
 
+	const button = new five.Button({
+		pin: 7,
+		invert: true, 
+		holdtime: 2000
+		});
+	
+	function buttonHandle1() {
+		console.log('button was pressed doggg')
+	}
+	
+	button.on("hold", buttonHandle1)
+	
+	
     setTimeout(function () {
         joystick.removeListener('change', eventHandler);
     }, 5000);
