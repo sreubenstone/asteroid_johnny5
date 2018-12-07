@@ -30,8 +30,11 @@ getAsteroids = async (input) => {
         console.log('horoscope h:', h)
         const horoscope = horoscopes[h].body
         console.log(horoscope)
+        const prompt = require('prompt')
+        console.log(prompt)
 
         // SMS the horoscope
+        
         /*
         client.messages
             .create({
@@ -42,8 +45,8 @@ getAsteroids = async (input) => {
             })
             .then(message => console.log(message.sid))
             .done();
-		*/
-
+		
+			*/
         // Display the horoscope on Pi <client>
 
 
