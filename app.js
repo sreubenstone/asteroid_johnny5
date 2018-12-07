@@ -6,10 +6,10 @@ const authToken = 'bfc9ff64caca3c90a9e58b786316e5c8';
 const client = require('twilio')(accountSid, authToken);
 
 
-const input = [1, 1, 3, 4, 2, 1, 1, 3, 4, 2]
+// const input = array;
 
 
-getAsteroids = async () => {
+getAsteroids = async (input) => {
     try {
         const asteroidsData = await axios({
             method: 'get',
@@ -24,7 +24,8 @@ getAsteroids = async () => {
         // console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
         // console.log('velocity in mph:', asteroids[3].close_approach_data[0].relative_velocity.miles_per_hour)
         // console.log('lunar miss distance:', asteroids[3].close_approach_data[0].miss_distance.lunar)
-
+		// console.log('here is asteroid:', asteroids)
+        console.log(asteroids)
         const h = executeHoroscope(input, asteroids)
         console.log('horoscope h:', h)
         const horoscope = horoscopes[h].body
@@ -59,12 +60,7 @@ getAsteroids = async () => {
 }
 
 
-
-
-getAsteroids()
-
-
-
+module.exports = getAsteroids
 
 
 

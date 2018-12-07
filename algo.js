@@ -4,12 +4,13 @@ const executeHoroscope = (input, asteroids) => {
 
     // get asteroid
 
-    const asteroid = input[2] * 2
+    const asteroid = input[2] * 1 -1
     const i = asteroids[asteroid]
 
-
-    const diamater = i.estimated_diameter.meters.estimated_diameter_max
-    const diameter_string = diamater.toString()
+	console.log('here is item:', asteroid)
+    const diameter = i.estimated_diameter.meters.estimated_diameter_max
+    console.log('diam here:', diameter)
+    const diameter_string = diameter.toString()
     const lastchar_diamater = diameter_string[diameter_string.length - 1];
 
 

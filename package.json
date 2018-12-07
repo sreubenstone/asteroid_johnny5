@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app.js",
-    "scratch": "node scratch.js"
+    "dev": "node joystick.js",
+    "scratch": "node scratch.js",
+    "joy": "node testjoy.js"
   },
   "author": "",
   "license": "ISC",
