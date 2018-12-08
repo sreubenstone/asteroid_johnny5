@@ -24,17 +24,17 @@ getAsteroids = async (input) => {
         // console.log('diamater in meters:', asteroids[3].estimated_diameter.meters.estimated_diameter_max)
         // console.log('velocity in mph:', asteroids[3].close_approach_data[0].relative_velocity.miles_per_hour)
         // console.log('lunar miss distance:', asteroids[3].close_approach_data[0].miss_distance.lunar)
-		// console.log('here is asteroid:', asteroids)
+        // console.log('here is asteroid:', asteroids)
         console.log(asteroids)
         const h = executeHoroscope(input, asteroids)
         console.log('horoscope h:', h)
         const horoscope = horoscopes[h].body
         console.log(horoscope)
-        const prompt = require('prompt')
-        console.log(prompt)
 
-        // SMS the horoscope
-        
+        // Collect Digits
+
+        // SMS the horoscope -- same thing creates 7 digit array..global variable...accessed by twilio
+
         /*
         client.messages
             .create({
