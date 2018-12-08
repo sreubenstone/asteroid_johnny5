@@ -1,8 +1,6 @@
 const axios = require('axios');
 const horoscopes = require('./horoscopes');
 const executeHoroscope = require('./algo')
-const accountSid = 'AC4f4a47682dd13eee8b49aa22c3538fe4';
-const authToken = 'bfc9ff64caca3c90a9e58b786316e5c8';
 const client = require('twilio')(accountSid, authToken);
 
 
@@ -34,6 +32,7 @@ getAsteroids = async (input) => {
         // Collect Digits
 
         // SMS the horoscope -- same thing creates 7 digit array..global variable...accessed by twilio
+
 
         /*
         client.messages
